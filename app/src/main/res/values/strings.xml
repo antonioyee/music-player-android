@@ -8,4 +8,5 @@
     <string name="atras"><![CDATA[<<]]></string>
     <string name="adelante"><![CDATA[>>]]></string>
     <string name="play_pause"><![CDATA[>]]></string>
+    <string name="time">00:00</string>
 </resources>

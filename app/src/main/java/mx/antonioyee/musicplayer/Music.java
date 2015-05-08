@@ -78,11 +78,11 @@ public class Music {
 
         ArrayList<Music> musica = new ArrayList<Music>();
 
-        musica.add( new Music("In Public", "Tigerskin", "Try the imposible EP", "8:00",context.getResources().getDrawable(R.mipmap.tigerskininpublic), "tigerskin_in_public.mp3") );
-        musica.add( new Music("Like a Stone","Audioslave", "Audioslave", "4.53",context.getResources().getDrawable(R.mipmap.audioslavelikeastone), "audioslave_like_a_stone.mp3") );
-        musica.add( new Music("Midnight City","M83", "Midnight City", "4:03",context.getResources().getDrawable(R.mipmap.m83midnightcity), "m83_midnight_city.mp3") );
-        musica.add( new Music("Otherside","Red Hot Chili Peppers", "Californication", "4:15",context.getResources().getDrawable(R.mipmap.otherside), "red_hot_chili_peppers_otherside.mp3") );
-        musica.add( new Music("Ready of Star","Arcade Fire", "The Suburbs", "4:15",context.getResources().getDrawable(R.mipmap.ready_of_star), "tigerskin_in_public.mp3") );
+        musica.add( new Music("In Public", "Tigerskin", "Try the imposible EP", "8:00",context.getResources().getDrawable(R.mipmap.tigerskininpublic), "tigerskin_in_public") );
+        musica.add( new Music("Like a Stone","Audioslave", "Audioslave", "4.53",context.getResources().getDrawable(R.mipmap.audioslavelikeastone), "audioslave_like_a_stone") );
+        musica.add( new Music("Midnight City","M83", "Midnight City", "4:03",context.getResources().getDrawable(R.mipmap.m83midnightcity), "m83_midnight_city") );
+        musica.add( new Music("Otherside","Red Hot Chili Peppers", "Californication", "4:15",context.getResources().getDrawable(R.mipmap.otherside), "red_hot_chili_peppers_otherside") );
+        musica.add( new Music("Ready of Star","Arcade Fire", "The Suburbs", "4:15",context.getResources().getDrawable(R.mipmap.ready_of_star), "arcade_fire_ready_to_start") );
 
         return musica;
 
