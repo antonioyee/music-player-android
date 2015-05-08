@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_activity_player_song">activity_player_song</string>
+    <string name="title_activity_player_song">PlayerSongActivity</string>
+    <string name="atras"><![CDATA[<<]]></string>
+    <string name="adelante"><![CDATA[>>]]></string>
+    <string name="play_pause"><![CDATA[>]]></string>
 </resources>
