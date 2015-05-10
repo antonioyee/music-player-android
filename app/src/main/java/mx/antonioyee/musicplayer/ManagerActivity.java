@@ -25,7 +25,7 @@ public class ManagerActivity extends ActionBarActivity implements ListMusicFragm
 
         fragmentManager = getSupportFragmentManager();
 
-        if ( resourceType.equals("sw600dp") ){
+        if ( resourceType.equals("sw600dp") || resourceType.equals("sw320dp-land") ){
             fragmentManager.beginTransaction()
                     .replace(R.id.containerLeft, ListMusicFragment.newInstance(Music.getSongs(getApplicationContext())))
                     .commit();
@@ -60,7 +60,7 @@ public class ManagerActivity extends ActionBarActivity implements ListMusicFragm
 
     @Override
     public void onMusicSelect(int position) {
-        if ( resourceType.equals("sw600dp") ){
+        if ( resourceType.equals("sw600dp") || resourceType.equals("sw320dp-land") ){
             fragmentManager.beginTransaction()
                     .replace(R.id.containerRight,PlayerFragment.newInstance(position))
                     .commit();
