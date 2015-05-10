@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:tag="default"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="mx.antonioyee.musicplayer.PlayerFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/photoAlbumF"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_launcher"
+            android:paddingBottom="@dimen/medium_padding"/>
+
+        <TextView
+            android:id="@+id/textTitleF"
+            android:text="@string/hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font"
+            android:paddingBottom="@dimen/small_padding"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textArtistF"
+            android:text="@string/hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font"
+            android:paddingBottom="@dimen/small_padding"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textAlbumF"
+            android:text="@string/hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font"
+            android:paddingBottom="@dimen/small_padding"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/textAvanceF"
+            android:text="@string/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:id="@+id/progressBarF"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/textDurationF"
+            android:text="@string/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnBackF"
+            android:text="@string/atras"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"/>
+
+        <Button
+            android:id="@+id/btnPlayPauseF"
+            android:text="@string/play_pause"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"/>
+
+        <Button
+            android:id="@+id/btnNext1F"
+            android:text="@string/adelante"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
