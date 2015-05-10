@@ -178,6 +178,8 @@ public class PlayerFragment extends Fragment implements  View.OnClickListener, R
     @Override
     public void onDetach() {
         super.onDetach();
-        mPlayer.stop();
+        if ( mPlayer != null ) {
+            mPlayer.stop();
+        }
     }
 }
