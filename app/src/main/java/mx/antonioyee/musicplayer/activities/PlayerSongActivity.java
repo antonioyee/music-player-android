@@ -1,7 +1,6 @@
-package mx.antonioyee.musicplayer;
+package mx.antonioyee.musicplayer.activities;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -15,6 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import mx.antonioyee.musicplayer.R;
+import mx.antonioyee.musicplayer.models.Music;
 
 
 public class PlayerSongActivity extends ActionBarActivity implements View.OnClickListener, Runnable {

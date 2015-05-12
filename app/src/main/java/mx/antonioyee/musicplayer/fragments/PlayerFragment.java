@@ -1,8 +1,6 @@
-package mx.antonioyee.musicplayer;
+package mx.antonioyee.musicplayer.fragments;
 
-import android.app.Activity;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,6 +13,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import mx.antonioyee.musicplayer.models.Music;
+import mx.antonioyee.musicplayer.R;
 
 
 public class PlayerFragment extends Fragment implements  View.OnClickListener, Runnable{

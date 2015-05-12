@@ -1,4 +1,4 @@
-package mx.antonioyee.musicplayer;
+package mx.antonioyee.musicplayer.activities;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +10,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import mx.antonioyee.musicplayer.models.Music;
+import mx.antonioyee.musicplayer.R;
+import mx.antonioyee.musicplayer.adapters.MusicAdapter;
 
 
 public class MainActivity extends ActionBarActivity {

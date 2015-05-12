@@ -1,9 +1,11 @@
-package mx.antonioyee.musicplayer;
+package mx.antonioyee.musicplayer.models;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
 import java.util.ArrayList;
+
+import mx.antonioyee.musicplayer.R;
 
 /**
  * Created by antonioyee on 06/05/15.

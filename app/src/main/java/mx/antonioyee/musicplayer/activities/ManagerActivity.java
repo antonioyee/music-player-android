@@ -1,4 +1,4 @@
-package mx.antonioyee.musicplayer;
+package mx.antonioyee.musicplayer.activities;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
@@ -7,6 +7,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import mx.antonioyee.musicplayer.models.Music;
+import mx.antonioyee.musicplayer.R;
+import mx.antonioyee.musicplayer.fragments.ListMusicFragment;
+import mx.antonioyee.musicplayer.fragments.PlayerFragment;
 
 
 public class ManagerActivity extends ActionBarActivity implements ListMusicFragment.OnFragmentInteractionListener {
@@ -62,7 +67,7 @@ public class ManagerActivity extends ActionBarActivity implements ListMusicFragm
     public void onMusicSelect(int position) {
         if ( resourceType.equals("sw600dp") || resourceType.equals("sw320dp-land") ){
             fragmentManager.beginTransaction()
-                    .replace(R.id.containerRight,PlayerFragment.newInstance(position))
+                    .replace(R.id.containerRight, PlayerFragment.newInstance(position))
                     .commit();
         }else{
             fragmentManager.beginTransaction()

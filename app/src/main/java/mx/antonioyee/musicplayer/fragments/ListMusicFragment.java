@@ -1,7 +1,6 @@
-package mx.antonioyee.musicplayer;
+package mx.antonioyee.musicplayer.fragments;
 
 import android.app.Activity;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -11,6 +10,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import mx.antonioyee.musicplayer.models.Music;
+import mx.antonioyee.musicplayer.R;
+import mx.antonioyee.musicplayer.adapters.MusicAdapter;
 
 public class ListMusicFragment extends Fragment {
 
