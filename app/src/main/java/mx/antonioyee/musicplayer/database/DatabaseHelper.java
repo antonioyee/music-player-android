@@ -1,8 +1,14 @@
 package mx.antonioyee.musicplayer.database;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.MatrixCursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 /**
  * Created by antonioyee on 12/05/15.
@@ -33,13 +39,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "  name VARCHAR(250) NULL)");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS album (" +
-                    "  id_album INT NOT NULL PRIMARY KEY AUTOINCREMENT," +
-                    "  name VARCHAR(250) NULL," +
-                    "  posterPic VARCHAR(45) NULL," +
-                    "  id_artist INT NOT NULL," +
-                    "  id_genre INT NOT NULL," +
-                    "  FOREIGN KEY(id_artist) REFERENCES artist (id_artist)," +
-                    "  FOREIGN KEY(id_genre) REFERENCES genre (id_genre) )");
+                "  id_album INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+                "  name VARCHAR(250) NULL," +
+                "  posterPic VARCHAR(45) NULL," +
+                "  id_artist INTEGER NOT NULL," +
+                "  id_genre INTEGER NOT NULL," +
+                "  FOREIGN KEY(id_artist) REFERENCES artist (id_artist)," +
+                "  FOREIGN KEY(id_genre) REFERENCES genre (id_genre) )");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS song (" +
                     "  id_song INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
@@ -57,5 +63,55 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS album");
             db.execSQL("DROP TABLE IF EXISTS song");
         }
+    }
+
+    public ArrayList<Cursor> getData(String Query){
+        //get writable database
+        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        String[] columns = new String[] { "mesage" };
+        //an array list of cursor to save two cursors one has results from the query
+        //other cursor stores error message if any errors are triggered
+        ArrayList<Cursor> alc = new ArrayList<Cursor>(2);
+        MatrixCursor Cursor2= new MatrixCursor(columns);
+        alc.add(null);
+        alc.add(null);
+
+
+        try{
+            String maxQuery = Query ;
+            //execute the query results will be save in Cursor c
+            Cursor c = sqlDB.rawQuery(maxQuery, null);
+
+
+            //add value to cursor2
+            Cursor2.addRow(new Object[] { "Success" });
+
+            alc.set(1,Cursor2);
+            if (null != c && c.getCount() > 0) {
+
+
+                alc.set(0,c);
+                c.moveToFirst();
+
+                return alc ;
+            }
+            return alc;
+        } catch(SQLException sqlEx){
+            Log.d("printing exception", sqlEx.getMessage());
+            //if any exceptions are triggered save the error message to cursor an return the arraylist
+            Cursor2.addRow(new Object[] { ""+sqlEx.getMessage() });
+            alc.set(1,Cursor2);
+            return alc;
+        } catch(Exception ex){
+
+            Log.d("printing exception", ex.getMessage());
+
+            //if any exceptions are triggered save the error message to cursor an return the arraylist
+            Cursor2.addRow(new Object[] { ""+ex.getMessage() });
+            alc.set(1,Cursor2);
+            return alc;
+        }
+
+
     }
 }

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import mx.antonioyee.musicplayer.models.Music;
 import mx.antonioyee.musicplayer.R;
 import mx.antonioyee.musicplayer.adapters.MusicAdapter;
+import mx.antonioyee.musicplayer.models.MusicOld;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -26,7 +27,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Music> musica = Music.getSongs(getApplicationContext());
+        ArrayList<MusicOld> musica = MusicOld.getSongs(getApplicationContext());
 
 
         listNames = (ListView) findViewById(R.id.listNames);

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import mx.antonioyee.musicplayer.models.Music;
 import mx.antonioyee.musicplayer.R;
+import mx.antonioyee.musicplayer.models.MusicOld;
 
 
 public class PlayerFragment extends Fragment implements  View.OnClickListener, Runnable{
@@ -26,11 +27,11 @@ public class PlayerFragment extends Fragment implements  View.OnClickListener, R
     private ImageView photoAlbumF;
     private Button btnBackF, btnPlayPauseF, btnNext1F;
     private ProgressBar progressBarF;
-    private Music music;
+    private MusicOld music;
     private MediaPlayer mPlayer;
     private Boolean play = false;
     private Thread thread;
-    private ArrayList<Music> musica;
+    private ArrayList<MusicOld> musica;
 
     public static PlayerFragment newInstance(int mPosition) {
         PlayerFragment fragment = new PlayerFragment();
@@ -49,7 +50,7 @@ public class PlayerFragment extends Fragment implements  View.OnClickListener, R
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mPosition = getArguments().getInt(ARG_PARAM_POSITION);
-            musica = Music.getSongs(getActivity());
+            musica = MusicOld.getSongs(getActivity());
             music = musica.get(mPosition);
         }
         thread= new Thread(this);
@@ -83,7 +84,7 @@ public class PlayerFragment extends Fragment implements  View.OnClickListener, R
         return viewRoot;
     }
 
-    private void loadData(Music music){
+    private void loadData(MusicOld music){
         photoAlbumF.setImageDrawable(music.getPhotoAlbum());
 
         textArtistF.setText(music.getArtist());

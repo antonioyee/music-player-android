@@ -12,16 +12,17 @@ import java.util.ArrayList;
 
 import mx.antonioyee.musicplayer.models.Music;
 import mx.antonioyee.musicplayer.R;
+import mx.antonioyee.musicplayer.models.MusicOld;
 
 /**
  * Created by antonioyee on 06/05/15.
  */
 public class MusicAdapter extends ArrayAdapter {
 
-    ArrayList<Music> array;
+    ArrayList<MusicOld> array;
     private Context context;
 
-    public MusicAdapter(Context context, int resource, ArrayList<Music> array) {
+    public MusicAdapter(Context context, int resource, ArrayList<MusicOld> array) {
         super(context, resource, array);
         this.array = array;
         this.context = context;

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 import mx.antonioyee.musicplayer.R;
 import mx.antonioyee.musicplayer.models.Music;
+import mx.antonioyee.musicplayer.models.MusicOld;
 
 
 public class PlayerSongActivity extends ActionBarActivity implements View.OnClickListener, Runnable {
@@ -28,7 +29,7 @@ public class PlayerSongActivity extends ActionBarActivity implements View.OnClic
     TextView textDuration;
     ImageView photoAlbum;
     TextView textFile;
-    ArrayList<Music> musica;
+    ArrayList<MusicOld> musica;
     Button btnBack, btnPlayPause, btnNext;
     MediaPlayer mPlayer;
     Boolean play = false;
@@ -39,7 +40,7 @@ public class PlayerSongActivity extends ActionBarActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player_song);
-        musica = Music.getSongs(getApplicationContext());
+        musica = MusicOld.getSongs(getApplicationContext());
 
         Intent intent = getIntent();
         if (intent.getExtras() != null) {
@@ -74,7 +75,7 @@ public class PlayerSongActivity extends ActionBarActivity implements View.OnClic
     }
 
     public void loadData(){
-        Music music = musica.get(position);
+        MusicOld music = musica.get(position);
 
         photoAlbum.setImageDrawable(music.getPhotoAlbum());
 

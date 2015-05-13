@@ -14,17 +14,18 @@ import java.util.ArrayList;
 import mx.antonioyee.musicplayer.models.Music;
 import mx.antonioyee.musicplayer.R;
 import mx.antonioyee.musicplayer.adapters.MusicAdapter;
+import mx.antonioyee.musicplayer.models.MusicOld;
 
 public class ListMusicFragment extends Fragment {
 
     private static final String ARG_PARAM_ARRAY = "paramArray";
-    private ArrayList<Music> mArray;
+    private ArrayList<MusicOld> mArray;
     private ListView listMusicFragment;
     private MusicAdapter adapter;
 
     private OnFragmentInteractionListener mListener;
 
-    public static ListMusicFragment newInstance(ArrayList<Music> mArray) {
+    public static ListMusicFragment newInstance(ArrayList<MusicOld> mArray) {
         ListMusicFragment fragment = new ListMusicFragment();
         Bundle args = new Bundle();
         args.putSerializable(ARG_PARAM_ARRAY, mArray);
@@ -40,7 +41,7 @@ public class ListMusicFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            this.mArray = (ArrayList<Music>) getArguments().getSerializable(ARG_PARAM_ARRAY);
+            this.mArray = (ArrayList<MusicOld>) getArguments().getSerializable(ARG_PARAM_ARRAY);
         }
     }
 
@@ -51,7 +52,7 @@ public class ListMusicFragment extends Fragment {
         View viewRoot = inflater.inflate(R.layout.fragment_list_music, container, false);
 
         listMusicFragment = (ListView) viewRoot.findViewById(R.id.listNamesFragment);
-        ArrayList<Music> music = Music.getSongs(getActivity());
+        ArrayList<MusicOld> music = MusicOld.getSongs(getActivity());
         adapter = new MusicAdapter(getActivity(), R.layout.simple_list_item_1, music);
 
         listMusicFragment.setAdapter(adapter);
